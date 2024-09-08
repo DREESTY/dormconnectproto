@@ -1,0 +1,629 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #d0ddff;
+  display: grid;
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+header {
+  background-color: #adc5ff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header img {
+  width: 150px;
+}
+
+nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  position: relative; /* Needed for pseudo-element */
+  font-weight: 700;
+}
+
+nav a:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: #4c59af; /* Green color for the underline */
+  position: absolute;
+  bottom: -5px; /* Position the underline below the text */
+  left: 0;
+  transition: width 0.3s ease-in-out; /* Add transition effect */
+}
+
+nav a:hover:after {
+  width: 100%; /* Show the underline on hover */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.slideshow {
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.slideshow img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.slideshow img.active {
+  opacity: 1;
+}
+
+/* Description Styles */
+.description {
+  text-align: center;
+  padding: 20px;
+  font-weight: 400;
+}
+
+.description button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4c59af;
+  color: white;
+  cursor: pointer;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #000000; /* Light gray background */
+  color: #ffffff; /* Dark gray text color */
+  height: auto;
+  width: 100%;
+  padding: 30px;
+  text-align: center;
+  position: fixed;
+  bottom: 0; /* Stick to the bottom */
+  left: 0; /* Align to the left edge */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between; /* Distribute space horizontally */
+  align-items: center; /* Align content vertically */
+  height: auto;
+  width: 100%; /* Limit footer container width (optional) */
+  margin: 0 auto 10px; /* Center the footer horizontally */
+}
+
+.footer-copyright,
+.footer-links,
+.social-icons {
+  flex: 1; /* Distribute space equally between elements */
+}
+
+/* Footer Copyright */
+.footer-copyright {
+  font-size: 14px; /* Adjust copyright text size */
+}
+
+/* Footer Links */
+.footer-links ul {
+  list-style: none; /* Remove default bullet points */
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  display: inline-block; /* Display links inline */
+  margin-right: 20px;
+}
+
+.footer-links a {
+  color: inherit; /* Inherit footer text color */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease-in-out; /* Add hover effect */
+  font-weight: 100;
+}
+
+.footer-links a:hover {
+  color: #007bff; /* Blue color on hover */
+}
+
+/* Social Icons */
+.social-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.social-icons li {
+  display: inline-block;
+  margin-left: 20px; /* Add spacing between icons */
+}
+
+.social-icons li a {
+  color: inherit; /* Inherit footer text color */
+}
+
+.social-icons li a:hover {
+  color: #007bff; /* Blue color on hover */
+}
+
+/* Font Awesome Icons (Assuming Font Awesome 6) */
+.fa-brands {
+  font-family: "Font Awesome 6 Brands";
+}
+
+.fa-whatsapp,
+.fa-x-twitter,
+.fa-instagram {
+  font-size: 20px; /* Adjust icon size as needed */
+}
+
+/* New styles for login form */
+
+.login-form {
+  background-color: #fff;
+  border-radius: 10px; /* Rounded corners */
+  padding: 30px;
+  width: 400px; /* Limit form width */
+  margin: 0 auto; /* Center the form */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-bottom: 100px; /* Add space below the form */
+  margin-top: 100px; /* Add space below the form */
+}
+
+.form-group {
+  margin-bottom: 0px;
+  text-align: start;
+}
+
+.form-group label {
+  display: flex;
+  margin-bottom: 5px;
+}
+
+.login-form input[type="text"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px; /* Rounded corners for input fields */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.login-form a {
+  display: block; /* Display the forgot password link on a new line */
+  margin-top: 10px;
+  font-size: 0.8em; /* Slightly smaller font for the link */
+  color: #aaa;
+  text-decoration: none; /* Remove underline from the link */
+}
+
+.login-form a:hover {
+  color: #333; /* Change link color on hover */
+}
+
+.login-form button {
+  background-color: #4c59af; /* Green color for the button */
+  color: white;
+  padding: 12px 20px;
+  border: none; /* Remove border from button */
+  border-radius: 5px; /* Rounded corners for button */
+  cursor: pointer; /* Indicate clickable behavior */
+}
+
+.about-description {
+  padding: 10px;
+  background-color: #4c59af; /* Light gray background */
+  border-radius: 10px; /* Rounded corners for the section */
+  margin: 0 auto; /* Center the section horizontally */
+  max-width: 1250px; /* Limit the width of the section */
+}
+
+.description-container {
+  background-color: rgb(198, 200, 244); /* White background for the description */
+  padding: 20px;
+  border-radius: 5px; /* Rounded corners for the description container */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Main Content Styles */
+main.container {
+  padding: 20px;
+  max-width: 700px; /* Limit container width */
+  margin: 0 auto; /* Center the container horizontally */
+  background-color: rgb(225, 235, 237); /* White background */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: block;
+  justify-content: center;
+}
+
+main.container p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #333; /* Dark gray text color */
+  display: block;
+  justify-content: center;
+}
+
+/* Form Styles */
+form.form {
+  display: flex;
+  flex-direction: column; /* Align questions one below the other */
+  padding: 20px; /* Add padding inside the form */
+}
+
+.form-group {
+  margin-bottom: 0px;
+}
+
+label {
+  display: block; /* Display labels above inputs */
+  margin-bottom: 5px;
+  font-weight: bolder;
+  color: #333; /* Dark gray text color */
+}
+
+input[type="text"],
+input[type="date"] {
+  width: 40%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Reduce input placeholder font size (optional) */
+input[type="text"]::placeholder,
+input[type="date"]::placeholder {
+  font-size: 0.8em; /* Adjust as needed */
+  color: #999; /* Light gray placeholder color */
+}
+
+/* Radio Button Styles */
+.radio-group {
+  display: inline-flex; /* Display radio buttons horizontally */
+  margin-right: 10px; /* Add spacing between radio groups */
+}
+
+.radio-group label {
+  margin-right: 10px; /* Add spacing between labels */
+  color: #333; /* Dark gray text color */
+}
+
+/* Button Styles */
+button[type="submit"] {
+  background-color: #007bff; /* Blue background */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  float: right; /* Align button to the right */
+}
+
+button[type="submit"]:hover {
+  background-color: #0067cc; /* Darker blue on hover */
+}
+
+.container-for-options {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.option {
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 20px;
+  border: 2px solid #000000;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.selected {
+  background-color: #d0ddff;
+  /* Change the color as per your preference */
+}
+
+/* Dropdown Menu Styles */
+select {
+  width: 80%; /* Match input width */
+  padding: 10px 20px 10px 10px; /* Adjust padding for arrow space */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Include padding in width calculation */
+  font-size: 16px; /* Adjust font size as needed */
+  background-color: #fff; /* White background color */
+  color: #333; /* Dark gray text color */
+  cursor: pointer;
+  appearance: none; /* Remove default dropdown styling */
+  outline: none; /* Remove default outline */
+  position: relative; /* Needed for arrow positioning */
+}
+
+select:focus {
+  border-color: #007bff; /* Blue border on focus */
+}
+
+/* Dropdown Arrow (using borders) */
+select::after {
+  content: ""; /* Empty content for pseudo-element */
+  width: 0; 
+  height: 0; 
+  border-style: solid;
+  border-width: 5px 5px 0 0; /* Create a downward pointing triangle */
+  border-color: #333; /* Dark gray arrow color */
+  position: absolute;
+  right: 10px; /* Adjust arrow position */
+  top: 50%;
+  transform: translateY(-50%); /* Center the arrow vertically */
+  pointer-events: none; /* Disable clicks on the arrow */
+}
+
+/* Downward arrow on hover (optional) */
+select:hover::after {
+  border-color: #007bff; /* Blue arrow color on hover (optional) */
+}
+
+/* Dropdown Menu Styles (Optional) */
+select {
+  width: 26%; /* Match input width */
+  padding: 10px 20px 10px 10px; /* Adjust padding for arrow space */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; /* Include padding in width calculation */
+  font-size: 16px; /* Adjust font size as needed */
+  background-color: #fff; /* White background color */
+  color: #333; /* Dark gray text color */
+  cursor: pointer;
+  appearance: none; /* Remove default dropdown styling */
+  outline: none; /* Remove default outline */
+  position: relative; /* Needed for arrow positioning */
+}
+
+select:focus {
+  border-color: #007bff; /* Blue border on focus */
+}
+
+/* Dropdown Arrow (using borders) */
+select::after {
+  content: ""; /* Empty content for pseudo-element */
+  width: 0; 
+  height: 0; 
+  border-style: solid;
+  border-width: 5px 5px 0 0; /* Create a downward pointing triangle */
+  border-color: #333; /* Dark gray arrow color */
+  position: absolute;
+  right: 10px; /* Adjust arrow position */
+  top: 50%;
+  transform: translateY(-50%); /* Center the arrow vertically */
+  pointer-events: none; /* Disable clicks on the arrow */
+}
+
+/* Downward arrow on hover (optional) */
+select:hover::after {
+  border-color: #007bff; /* Blue arrow color on hover (optional) */
+}
+
+.mbti-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.mbti-dropdown select {
+  width: 200px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('arrow_down.png');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 15px;
+}
+
+.question-mark {
+  position: right;
+  top: 100%;
+  right: 0;
+  transform: translateY(-50%);
+  cursor: help;
+}
+
+.question-mark img {
+  width: 10px;
+  height: 10px;
+  vertical-align: middle;
+}
+
+.question-mark:hover + .mbti-description {
+  display: block;
+}
+
+.mbti-description {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #d5d8e6;
+  border: 1px solid #8b9ce7;
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 1;
+  width: 400px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.roommate-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  max-width: 1000px;
+}
+
+.roommate-card {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.roommate-card:hover {
+  transform: translateY(-5px);
+}
+
+.roommate-card img {
+  width: 100%;
+  height: auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.roommate-info {
+  padding: 20px;
+}
+
+.roommate-info h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.roommate-info p {
+  margin: 5px 0;
+  color: #666;
+}
+
+.send-message-btn {
+  background-color: #7582d8; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.send-message-btn:hover {
+  background-color: #3545af; /* Darker Green */
+}
+
+.contact-container {
+  max-width: 1500px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-info, .contact-form {
+  background-color: white;
+  padding: 20px;
+  border-color: #000000;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: auto;
+}
+
+.contact-info h2, .contact-form h2 {
+  color: #4c59af;
+  margin-bottom: 10px;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.contact-info ul li {
+  margin-bottom: 5px;
+}
+
+.contact-info ul li a {
+  color: #4c59af;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+  width: 100px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: auto;
+}
+
+button[type="button"] {
+  background-color: #4c59af;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="button"]:hover {
+  background-color: #3b4371;
+}

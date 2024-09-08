@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DormConnect</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a18cd41a45.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+  <style>
+    
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="index.html">
+      <img src="logo.png" alt="DormConnect Logo">
+    </a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#"><b><p onclick="showAlert()">Hi User!</p></b></a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <div style="margin: 20px ; display: block; font-size: 1.5rem; font-weight: bold;">
+      <p>Hi there! Welcome to DormConnect. To help you find the perfect roommate, we'd like to ask you a few questions
+        about yourself and your living preferences. Please answer honestly so we can connect you with someone
+        compatible.</p>
+    </div>
+
+    <div>
+      <form id="survey-form">
+        <h2>Basic Details</h2>
+        <div class="sform-group">
+          <label for="name">Full Name:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="birthdate">Birthdate:</label>
+          <input type="date" id="birthdate" name="birthdate" required>
+        </div>
+        <div class="form-group">
+          <label for="hometown">Hometown:</label>
+          <input type="text" id="hometown" name="hometown" required>
+        </div>
+        <div class="form-group">
+          <label for="course">Course:</label>
+          <input type="text" id="course" name="course" required>
+        </div>
+        <div class="form-group">
+          <label for="branch">Branch: (optional)</label>
+          <input type="text" id="branch" name="branch">
+        </div>
+        <div class="form-group">
+          <label for="religion">Religion: (optional)</label>
+          <input type="text" id="religion" name="religion">
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender:</label>
+          <select name="gender" id="gender" required>
+            <option value="">Click to choose</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="non-binary">Non-Binary</option>
+            <option value="genderqueer">Genderqueer</option>
+            <option value="agender">Agender</option>
+            <option value="other">Prefer not to say</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="sexual-orientation">Sexual Orientation:</label>
+          <select name="sexual-orientation" id="sexual-orientation" required>
+            <option value="">Click to choose</option>
+            <option value="heterosexual">Heterosexual</option>
+            <option value="homosexual">Homosexual</option>
+            <option value="bisexual">Bisexual</option>
+            <option value="pansexual">Pansexual</option>
+            <option value="asexual">Asexual</option>
+            <option value="queer">Queer</option>
+            <option value="other">Prefer not to say</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="political-ideaology">Political ideaology:</label>
+          <select name="political-ideaology" id="political-ideaology" required>
+            <option value="">Click to choose</option>
+            <option value="pcons">Conservative</option>
+            <option value="plib">Liberal</option>
+            <option value="pcomm">Communist</option>
+            <option value="prad">Radical</option>
+            <option value="apol">Apolitical</option>
+            <option value="queer">Queer</option>
+            <option value="other">Prefer not to say</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="mbti-type">MBTI Type:</label>
+            <div class="mbti-dropdown">
+              <select id="mbti-type" name="mbti-type">
+                <option value="none">Select MBTI Type</option>
+                <option value="INTJ">INTJ</option>
+                <option value="INTP">INTP</option>
+                <option value="ENTJ">ENTJ</option>
+                <option value="ENTP">ENTP</option>
+                <option value="INFJ">INFJ</option>
+                <option value="INFP">INFP</option>
+                <option value="ENFJ">ENFJ</option>
+                <option value="ENFP">ENFP</option>
+                <option value="ISTJ">ISTJ</option>
+                <option value="ISFJ">ISFJ</option>
+                <option value="ESTJ">ESTJ</option>
+                <option value="ESFJ">ESFJ</option>
+                <option value="ISTP">ISTP</option>
+                <option value="ISFP">ISFP</option>
+                <option value="ESTP">ESTP</option>
+                <option value="ESFP">ESFP</option>
+              </select>
+              <span class="question-mark" title="What is MBTI?"><img src="question-mark.png" alt="Question Mark"></span>
+              <div class="mbti-description">
+                <p>MBTI stands for Myers-Briggs Type Indicator. It's a personality assessment tool that helps identify preferences in four areas: Extroversion (E) or Introversion (I), Sensing (S) or Intuition (N), Thinking (T) or Feeling (F), Judging (J) or Perceiving (P). To take the test, go to <a href="https://www.16personalities.com/">16 Personalities</a></p>
+              </div>
+            </div>
+          </div>
+          <span class="question-mark" title="What is MBTI?"></span>
+        </div>
+        <h2>Roommate Etiquette</h2>
+        <p style="font-size: large; font-weight: bold;">Please select the option that best describes your preference for
+          each statement.</p>
+        <div class="form-group">
+          <label for="music">It's okay to listen to music loudly inside your room (I mean it's my room)</label>
+          <label for="agree">
+            <input type="radio" id="agree" name="music" value="agree">Agree</label>
+
+          <label for="not-sure">
+            <input type="radio" id="not-sure" name="music" value="not-sure">Not sure</label>
+
+          <label for="disagree">
+            <input type="radio" id="disagree" name="music" value="disagree">Disagree</label>
+        </div>
+        <BR>
+        <div class="form-group">
+          <label for="cleanliness">Cleanliness is very important to you in a shared living space</label>
+          <label for="agree">
+            <input type="radio" id="agree" name="cleanliness" value="agree">Agree</label>
+
+          <label for="not-sure">
+            <input type="radio" id="not-sure" name="cleanliness" value="not-sure">Not sure</label>
+
+          <label for="disagree">
+            <input type="radio" id="disagree" name="cleanliness" value="disagree">Disagree</label>
+        </div>
+        <BR>
+
+        <div class="form-group">
+          <label for="invitation">You like to have friends over on a regular basis</label>
+          <label for="agree">
+            <input type="radio" id="agree" name="invitation" value="agree">Agree</label>
+
+          <label for="not-sure">
+            <input type="radio" id="not-sure" name="invitation" value="not-sure">Not sure</label>
+
+          <label for="disagree">
+            <input type="radio" id="disagree" name="invitation" value="disagree">Disagree</label>
+        </div>
+        <BR>
+          <div class="form-group">
+            <label for="organized">Common areas should always be kept very clean and organized</label>
+            <label for="agree">
+              <input type="radio" id="agree" name="organized" value="agree">Agree</label>
+  
+            <label for="not-sure">
+              <input type="radio" id="not-sure" name="organized" value="not-sure">Not sure</label>
+  
+            <label for="disagree">
+              <input type="radio" id="disagree" name="organized" value="disagree">Disagree</label>
+          </div>
+        <br>
+        <div class="form-group">
+          <label for="sleep">Are you a night owl?</label>
+          <label for="agree">
+            <input type="radio" id="agree" name="sleep" value="agree">Agree</label>
+
+          <label for="not-sure">
+            <input type="radio" id="not-sure" name="sleep" value="not-sure">Not sure</label>
+
+          <label for="disagree">
+            <input type="radio" id="disagree" name="sleep" value="disagree">Disagree</label>
+        </div>
+        <BR>
+        <div class="form-group">
+          <label for="sleep">Are you a morning bird?</label>
+          <label for="agree">
+            <input type="radio" id="agree" name="sleep" value="agree">Agree</label>
+
+          <label for="not-sure">
+            <input type="radio" id="not-sure" name="sleep" value="not-sure">Not sure</label>
+
+          <label for="disagree">
+            <input type="radio" id="disagree" name="sleep" value="disagree">Disagree</label>
+        </div>
+        <br>
+        <div class="form-group">
+          <label for="friends-over">You like to have friends over on a regular basis</label>
+          <br>
+          <label for="friends-over-agree">
+            <input type="radio" id="friends-over-agree" name="friends-over" value="agree">
+            Agree
+          </label>
+          <label for="friends-over-not-sure">
+            <input type="radio" id="friends-over-not-sure" name="friends-over" value="not-sure">
+            Not Sure
+          </label>
+          <label for="friends-over-disagree">
+            <input type="radio" id="friends-over-disagree" name="friends-over" value="disagree">
+            Disagree
+          </label>
+        </div>
+        <BR>
+          <div class="form-group">
+            <label for="party-house">You would like your room to be known as a party house</label>
+            <label for="party-house-agree">
+              <input type="radio" id="party-house-agree" name="party-house" value="agree">
+              Agree
+            </label>
+            <label for="party-house-not-sure">
+              <input type="radio" id="party-house-not-sure" name="party-house" value="not-sure">
+              Not Sure
+            </label>
+            <label for="party-house-disagree">
+              <input type="radio" id="party-house-disagree" name="party-house" value="disagree">
+              Disagree
+            </label>
+          </div>
+<BR>
+  <div class="form-group">
+    <label for="room-cool">You like to keep the room cool when you're sleeping</label>
+    <label for="room-cool-agree">
+      <input type="radio" id="room-cool-agree" name="room-cool" value="agree">
+      Agree
+    </label>
+  
+    <label for="room-cool-not-sure">
+      <input type="radio" id="room-cool-not-sure" name="room-cool" value="not-sure">
+      Not Sure
+    </label>
+  
+    <label for="room-cool-disagree">
+      <input type="radio" id="room-cool-disagree" name="room-cool" value="disagree">
+      Disagree
+    </label>
+  </div>
+<BR>
+  <div class="form-group">
+    <label for="common-areas">Common areas should always be kept very clean and organized</label>
+    <label for="common-areas-agree">
+      <input type="radio" id="common-areas-agree" name="common-areas" value="agree">
+      Agree
+    </label>
+  
+    <label for="common-areas-not-sure">
+      <input type="radio" id="common-areas-not-sure" name="common-areas" value="not-sure">
+      Not Sure
+    </label>
+  
+    <label for="common-areas-disagree">
+      <input type="radio" id="common-areas-disagree" name="common-areas" value="disagree">
+      Disagree
+    </label>
+  </div>
+<BR>
+  
+  <div class="form-group">
+    <label for="invite-notice">It's okay to invite someone over without giving notice</label>
+    <label for="invite-notice-agree">
+      <input type="radio" id="invite-notice-agree" name="invite-notice" value="agree">
+      Agree
+    </label>
+  
+    <label for="invite-notice-not-sure">
+      <input type="radio" id="invite-notice-not-sure" name="invite-notice" value="not-sure">
+      Not Sure
+    </label>
+  
+    <label for="invite-notice-disagree">
+      <input type="radio" id="invite-notice-disagree" name="invite-notice" value="disagree">
+      Disagree
+    </label>
+  </div>
+<BR>
+  <div class="form-group">
+    <label for="roommate-things">It's okay for your roommates to use your things</label>
+    <label for="roommate-things-agree">
+      <input type="radio" id="roommate-things-agree" name="roommate-things" value="agree">
+      Agree
+    </label>
+  
+    <label for="roommate-things-not-sure">
+      <input type="radio" id="roommate-things-not-sure" name="roommate-things" value="not-sure">
+      Not Sure
+    </label>
+  
+    <label for="roommate-things-disagree">
+      <input type="radio" id="roommate-things-disagree" name="roommate-things" value="disagree">
+      Disagree
+    </label>
+  </div>
+<BR>
+  <div class="form-group">
+    <label for="roommate-friends">It's important to be friends with your roommates</label>
+    <label for="roommate-friends-agree">
+      <input type="radio" id="roommate-friends-agree" name="roommate-friends" value="agree">
+      Agree
+    </label>
+  
+    <label for="roommate-friends-not-sure">
+      <input type="radio" id="roommate-friends-not-sure" name="roommate-friends" value="not-sure">
+      Not Sure
+    </label>
+  
+    <label for="roommate-friends-disagree">
+      <input type="radio" id="roommate-friends-disagree" name="roommate-friends" value="disagree">
+      Disagree
+    </label>
+  </div>
+<BR>
+  <div class="form-group">
+    <label for="house-chores">It's important to have assigned house chores/responsibilities</label>
+    <label for="house-chores-agree">
+      <input type="radio" id="house-chores-agree" name="house-chores" value="agree">
+      Agree
+    </label>
+  
+    <label for="house-chores-not-sure">
+      <input type="radio" id="house-chores-not-sure" name="house-chores" value="not-sure">
+      Not Sure
+    </label>
+  
+    <label for="house-chores-disagree">
+      <input type="radio" id="house-chores-disagree" name="house-chores" value="disagree">
+      Disagree
+    </label>
+  </div>
+<BR>
+  <div class="form-group">
+    <label for="dirty-laundry">It's okay to leave dirty laundry lying around for a few days.</label>
+    <label for="dirty-laundry-agree">
+      <input type="radio" id="dirty-laundry-agree" name="dirty-laundry" value="agree">
+      Agree
+    </label>
+  
+    <label for="dirty-laundry-not-sure">
+      <input type="radio" id="dirty-laundry-not-sure" name="dirty-laundry" value="not-sure">
+      Not Sure
+    </label>
+  
+    <label for="dirty-laundry-disagree">
+      <input type="radio" id="dirty-laundry-disagree" name="dirty-laundry" value="disagree">
+      Disagree
+    </label>
+  </div>
+<BR>
+  <div class="form-group">
+    <label for="trash-responsibility">Taking out the trash is a shared responsibility.</label>
+    <label for="trash-responsibility-agree">
+      <input type="radio" id="trash-responsibility-agree" name="trash-responsibility" value="agree">
+      Agree
+    </label>
+  
+    <label for="trash-responsibility-not-sure">
+      <input type="radio" id="trash-responsibility-not-sure" name="trash-responsibility" value="not-sure">
+      Not Sure
+    </label>
+  
+    <label for="trash-responsibility-disagree">
+      <input type="radio" id="trash-responsibility-disagree" name="trash-responsibility" value="disagree">
+      Disagree
+    </label>
+  </div>
+<BR>
+  <div class="form-group">
+    <label for="quiet-hours">Respecting quiet hours for studying or sleeping is important.</label>
+    <label for="quiet-hours-agree">
+      <input type="radio" id="quiet-hours-agree" name="quiet-hours" value="agree">
+      Agree
+    </label>
+  
+    <label for="quiet-hours-not-sure">
+      <input type="radio" id="quiet-hours-not-sure" name="quiet-hours" value="not-sure">
+      Not Sure
+    </label>
+  
+    <label for="quiet-hours-disagree">
+      <input type="radio" id="quiet-hours-disagree" name="quiet-hours" value="disagree">
+      Disagree
+    </label>
+  </div>
+<BR>
+  <div class="form-group">
+    <label for="communication">Open communication is key to resolving roommate conflicts.</label>
+    <label for="communication-agree">
+      <input type="radio" id="communication-agree" name="communication" value="agree">
+      Agree
+    </label>
+  
+    <label for="communication-not-sure">
+      <input type="radio" id="communication-not-sure" name="communication" value="not-sure">
+      Not Sure
+    </label>
+  
+    <label for="communication-disagree">
+      <input type="radio" id="communication-disagree" name="communication" value="disagree">
+      Disagree
+    </label>
+  </div>
+<BR>
+  <div class="form-group">
+    <label for="borrowing">It's okay to borrow something from a roommate without asking, as long as you put it back.</label>
+    <label for="borrowing-agree">
+      <input type="radio" id="borrowing-agree" name="borrowing" value="agree">
+      Agree
+    </label>
+  
+    <label for="borrowing-not-sure">
+      <input type="radio" id="borrowing-not-sure" name="borrowing" value="not-sure">
+      Not Sure
+    </label>
+  
+    <label for="borrowing-disagree">
+      <input type="radio" id="borrowing-disagree" name="borrowing" value="disagree">
+      Disagree
+    </label>
+  </div>
+<BR>
+  
+  <div class="form-group">
+    <label for="smoking-inside">Smoking (cigarettes, e-cigarettes, etc.) and/or drinking inside the apartment is okay.</label>
+    <label for="smoking-inside-agree">
+      <input type="radio" id="smoking-inside-agree" name="smoking-inside" value="agree">
+      Agree
+    </label>
+  
+    <label for="smoking-inside-not-sure">
+      <input type="radio" id="smoking-inside-not-sure" name="smoking-inside" value="not-sure">
+      Not Sure
+    </label>
+  
+    <label for="smoking-inside-disagree">
+      <input type="radio" id="smoking-inside-disagree" name="smoking-inside" value="disagree">
+      Disagree
+    </label>
+  </div>
+
+  <BR>
+
+    <div class="form-group">
+      <label for="additional-comments" style="font-weight: bold;">Anything else about you that a potential roommate should know?</label>
+      <textarea id="additional-comments" name="additional-comments" rows="5" cols="50"></textarea>
+    </div>
+<br>
+    <div class="form-group">
+      <label for="bio" style="font-weight: bold;">Add a cool bio</label>
+      <textarea id="bio" name="bio" rows="1" cols="70"></textarea>
+    </div>
+
+
+<BR>
+  <BR>
+
+
+        <div>
+          <p style="font-size: 1.3REM; font-weight: BOLD;"> Now please fill out the following.
+            <br>
+            (You can select maximum 5 choices)
+          </p>
+        </div>
+
+        <div class="container-for-options">
+
+          <h2>Music Preferences</h2>
+          <div class="options">
+            <div class="option music" onclick="toggleSelection(this)">Alternative</div>
+            <div class="option music" onclick="toggleSelection(this)">Asian Pop</div>
+            <div class="option music" onclick="toggleSelection(this)">Blues</div>
+            <div class="option music" onclick="toggleSelection(this)">Blues</div>
+            <div class="option music" onclick="toggleSelection(this)">Classical</div>
+            <div class="option music" onclick="toggleSelection(this)">Country</div>
+            <div class="option music" onclick="toggleSelection(this)">Dance</div>
+            <div class="option music" onclick="toggleSelection(this)">EDM</div>
+            <div class="option music" onclick="toggleSelection(this)">Folk</div>
+            <div class="option music" onclick="toggleSelection(this)">Funk</div>
+            <div class="option music" onclick="toggleSelection(this)">Gospel</div>
+            <div class="option music" onclick="toggleSelection(this)">Hip Hop</div>
+            <div class="option music" onclick="toggleSelection(this)">Indie</div>
+            <div class="option music" onclick="toggleSelection(this)">Instrumental</div>
+            <div class="option music" onclick="toggleSelection(this)">Jazz</div>
+            <div class="option music" onclick="toggleSelection(this)">Latin</div>
+            <div class="option music" onclick="toggleSelection(this)">Lounge</div>
+            <div class="option music" onclick="toggleSelection(this)">Metal</div>
+            <div class="option music" onclick="toggleSelection(this)">New Age</div>
+            <div class="option music" onclick="toggleSelection(this)">Opera</div>
+            <div class="option music" onclick="toggleSelection(this)">Pop</div>
+            <div class="option music" onclick="toggleSelection(this)">Punk</div>
+            <div class="option music" onclick="toggleSelection(this)">R&B</div>
+            <div class="option music" onclick="toggleSelection(this)">Rap</div>
+            <div class="option music" onclick="toggleSelection(this)">Reggae</div>
+            <div class="option music" onclick="toggleSelection(this)">Rock</div>
+            <div class="option music" onclick="toggleSelection(this)">Soul</div>
+            <!-- Add more music options here -->
+          </div>
+
+          <h2>Movie Preferences</h2>
+          <div class="options">
+            <div class="option movie" onclick="toggleSelection(this)">Action</div>
+            <div class="option movie" onclick="toggleSelection(this)">Adventure</div>
+            <div class="option movie" onclick="toggleSelection(this)">Animation</div>
+            <div class="option movie" onclick="toggleSelection(this)">Comedy</div>
+            <div class="option movie" onclick="toggleSelection(this)">Crime</div>
+            <div class="option movie" onclick="toggleSelection(this)">Documentary</div>
+            <div class="option movie" onclick="toggleSelection(this)">Drama</div>
+            <div class="option movie" onclick="toggleSelection(this)">Fantasy</div>
+            <div class="option movie" onclick="toggleSelection(this)">Historical</div>
+            <div class="option movie" onclick="toggleSelection(this)">Horror</div>
+            <div class="option movie" onclick="toggleSelection(this)">Mystery</div>
+            <div class="option movie" onclick="toggleSelection(this)">Political</div>
+            <div class="option movie" onclick="toggleSelection(this)">Romance</div>
+            <div class="option movie" onclick="toggleSelection(this)">Satire</div>
+            <div class="option movie" onclick="toggleSelection(this)">Sci-Fi</div>
+            <div class="option movie" onclick="toggleSelection(this)">Thriller</div>
+            <div class="option movie" onclick="toggleSelection(this)">Western</div>
+            <!-- Add more movie options here -->
+          </div>
+
+          <h2>Personality Preferences</h2>
+          <div class="options">
+            <div class="option personality" onclick="toggleSelection(this)">Optimist</div>
+            <div class="option personality" onclick="toggleSelection(this)">Pessimist</div>
+            <div class="option personality" onclick="toggleSelection(this)">Introverted</div>
+            <div class="option personality" onclick="toggleSelection(this)">Extroverted</div>
+            <div class="option personality" onclick="toggleSelection(this)">Ambitious</div>
+            <div class="option personality" onclick="toggleSelection(this)">Procrastinator</div>
+            <div class="option personality" onclick="toggleSelection(this)">Patient</div>
+            <div class="option personality" onclick="toggleSelection(this)">Blunt</div>
+            <div class="option personality" onclick="toggleSelection(this)">Easy Going</div>
+            <div class="option personality" onclick="toggleSelection(this)">Nerdy</div>
+            <div class="option personality" onclick="toggleSelection(this)">Intellectual</div>
+            <div class="option personality" onclick="toggleSelection(this)">Prankster</div>
+            <div class="option personality" onclick="toggleSelection(this)">Bubbly</div>
+            <div class="option personality" onclick="toggleSelection(this)">Passionate</div>
+            <div class="option personality" onclick="toggleSelection(this)">Confident</div>
+            <!-- Add more personality options here -->
+          </div>
+
+          <h2>Lifestyle Preferences</h2>
+          <div class="options">
+            <div class="option lifestyle" onclick="toggleSelection(this)">Adventurous</div>
+            <div class="option lifestyle" onclick="toggleSelection(this)">Active</div>
+            <div class="option lifestyle" onclick="toggleSelection(this)">Creative</div>
+            <div class="option lifestyle" onclick="toggleSelection(this)">Organized</div>
+            <div class="option lifestyle" onclick="toggleSelection(this)">Early Bird</div>
+            <div class="option lifestyle" onclick="toggleSelection(this)">Night Owl</div>
+            <div class="option lifestyle" onclick="toggleSelection(this)">Healthy</div>
+            <div class="option lifestyle" onclick="toggleSelection(this)">Vegan</div>
+            <div class="option lifestyle" onclick="toggleSelection(this)">Vegetarian</div>
+            <div class="option lifestyle" onclick="toggleSelection(this)">Homebody</div>
+            <div class="option lifestyle" onclick="toggleSelection(this)">Party Animal</div>
+            <div class="option lifestyle" onclick="toggleSelection(this)">Social</div>
+            <div class="option lifestyle" onclick="toggleSelection(this)">Workaholic</div>
+            <div class="option lifestyle" onclick="toggleSelection(this)">Couch Potato</div>
+            <div class="option lifestyle" onclick="toggleSelection(this)">No Drugs/Alcohol</div>
+            <div class="option lifestyle" onclick="toggleSelection(this)">Unconventional</div>
+            <!-- Add lifestyle options here -->
+          </div>
+
+          <h2>Hobbies</h2>
+          <div class="options">
+            <div class="option hobbies" onclick="toggleSelection(this)">Boating</div>
+            <div class="option hobbies" onclick="toggleSelection(this)">Clubbing</div>
+            <div class="option hobbies" onclick="toggleSelection(this)">Concerts</div>
+            <div class="option hobbies" onclick="toggleSelection(this)">Dancing</div>
+            <div class="option hobbies" onclick="toggleSelection(this)">Cooking</div>
+            <div class="option hobbies" onclick="toggleSelection(this)">Fashion</div>
+            <div class="option hobbies" onclick="toggleSelection(this)">Foodie</div>
+            <div class="option hobbies" onclick="toggleSelection(this)">Gamer</div>
+            <div class="option hobbies" onclick="toggleSelection(this)">Hiking</div>
+            <div class="option hobbies" onclick="toggleSelection(this)">Motorcycling</div>
+            <div class="option hobbies" onclick="toggleSelection(this)">Movie</div>
+            <div class="option hobbies" onclick="toggleSelection(this)">Museums</div>
+            <div class="option hobbies" onclick="toggleSelection(this)">Music</div>
+            <div class="option hobbies" onclick="toggleSelection(this)">Photography</div>
+            <div class="option hobbies" onclick="toggleSelection(this)">Pole Dancing</div>
+            <div class="option hobbies" onclick="toggleSelection(this)">Reading</div>
+            <div class="option hobbies" onclick="toggleSelection(this)">Running</div>
+            <div class="option hobbies" onclick="toggleSelection(this)">Scuba Diving</div>
+            <div class="option hobbies" onclick="toggleSelection(this)">Sports</div>
+            <div class="option hobbies" onclick="toggleSelection(this)">Technology</div>
+            <div class="option hobbies" onclick="toggleSelection(this)">Theater</div>
+            <div class="option hobbies" onclick="toggleSelection(this)">Travel</div>
+            <div class="option hobbies" onclick="toggleSelection(this)">Volunteering</div>
+            <div class="option hobbies" onclick="toggleSelection(this)">Wine Tasting</div>
+            <!-- Add hobbies options here -->
+          </div>
+
+          <h2>Sports</h2>
+          <div class="options">
+            <div class="option sports" onclick="toggleSelection(this)">American Football</div>
+            <div class="option sports" onclick="toggleSelection(this)">Baseball</div>
+            <div class="option sports" onclick="toggleSelection(this)">Climbing</div>
+            <div class="option sports" onclick="toggleSelection(this)">Cricket</div>
+            <div class="option sports" onclick="toggleSelection(this)">Cross Fit</div>
+            <div class="option sports" onclick="toggleSelection(this)">Gymnastics</div>
+            <div class="option sports" onclick="toggleSelection(this)">Hockey</div>
+            <div class="option sports" onclick="toggleSelection(this)">Kayak</div>
+            <div class="option sports" onclick="toggleSelection(this)">Basketball</div>
+            <div class="option sports" onclick="toggleSelection(this)">Cycling</div>
+            <div class="option sports" onclick="toggleSelection(this)">Martial Arts</div>
+            <div class="option sports" onclick="toggleSelection(this)">Bowling</div>
+            <div class="option sports" onclick="toggleSelection(this)">Equestrian</div>
+            <div class="option sports" onclick="toggleSelection(this)">Boxing</div>
+            <div class="option sports" onclick="toggleSelection(this)">Golf</div>
+            <div class="option sports" onclick="toggleSelection(this)">Motocross</div>
+            <div class="option sports" onclick="toggleSelection(this)">Rugby</div>
+            <div class="option sports" onclick="toggleSelection(this)">Skateboarding</div>
+            <div class="option sports" onclick="toggleSelection(this)">Skating</div>
+            <div class="option sports" onclick="toggleSelection(this)">Skiing/Boarding</div>
+            <div class="option sports" onclick="toggleSelection(this)">Squash</div>
+            <div class="option sports" onclick="toggleSelection(this)">Surfing</div>
+            <div class="option sports" onclick="toggleSelection(this)">Table Tennis</div>
+            <div class="option sports" onclick="toggleSelection(this)">Tennis</div>
+            <div class="option sports" onclick="toggleSelection(this)">Water Skiing</div>
+            <div class="option sports" onclick="toggleSelection(this)">Weight Lifting</div>
+            <div class="option sports" onclick="toggleSelection(this)">Windsurfing</div>
+            <div class="option sports" onclick="toggleSelection(this)">Soccer</div>
+            <div class="option sports" onclick="toggleSelection(this)">Softball</div>
+            <div class="option sports" onclick="toggleSelection(this)">Volleyball</div>
+            <div class="option sports" onclick="toggleSelection(this)">Water Polo</div>
+            <!-- Add sports options here -->
+          </div>
+
+        </div>
+
+        <script>
+          var selectedMusicOptions = [];
+          var selectedMovieOptions = [];
+          var selectedPersonalityOptions = [];
+          var selectedLifestyleOptions = [];
+          var selectedHobbiesOptions = [];
+          var selectedSportsOptions = [];
+
+          function toggleSelection(option) {
+            if (option.classList.contains('music')) {
+              toggleMusicSelection(option);
+            } else if (option.classList.contains('movie')) {
+              toggleMovieSelection(option);
+            } else if (option.classList.contains('personality')) {
+              togglePersonalitySelection(option);
+            } else if (option.classList.contains('lifestyle')) {
+              toggleLifestyleSelection(option);
+            } else if (option.classList.contains('hobbies')) {
+              toggleHobbiesSelection(option);
+            } else if (option.classList.contains('sports')) {
+              toggleSportsSelection(option);
+            }
+          }
+
+          function toggleMusicSelection(option) {
+            if (selectedMusicOptions.includes(option.innerText)) {
+              option.classList.remove('selected');
+              selectedMusicOptions = selectedMusicOptions.filter(item => item !== option.innerText);
+            } else {
+              if (selectedMusicOptions.length < 5) {
+                option.classList.add('selected');
+                selectedMusicOptions.push(option.innerText);
+              } else {
+                alert('You can only select up to 5 music options.');
+              }
+            }
+          }
+
+          function toggleMovieSelection(option) {
+            if (selectedMovieOptions.includes(option.innerText)) {
+              option.classList.remove('selected');
+              selectedMovieOptions = selectedMovieOptions.filter(item => item !== option.innerText);
+            } else {
+              if (selectedMovieOptions.length < 5) {
+                option.classList.add('selected');
+                selectedMovieOptions.push(option.innerText);
+              } else {
+                alert('You can only select up to 5 movie options.');
+              }
+            }
+          }
+
+          function togglePersonalitySelection(option) {
+            if (selectedPersonalityOptions.includes(option.innerText)) {
+              option.classList.remove('selected');
+              selectedPersonalityOptions = selectedPersonalityOptions.filter(item => item !== option.innerText);
+            } else {
+              if (selectedPersonalityOptions.length < 5) {
+                option.classList.add('selected');
+                selectedPersonalityOptions.push(option.innerText);
+              } else {
+                alert('You can only select up to 5 personality options.');
+              }
+            }
+          }
+
+          function toggleLifestyleSelection(option) {
+            // Implement similar logic for lifestyle preferences
+            if (selectedPersonalityOptions.includes(option.innerText)) {
+              option.classList.remove('selected');
+              selectedPersonalityOptions = selectedPersonalityOptions.filter(item => item !== option.innerText);
+            } else {
+              if (selectedPersonalityOptions.length < 5) {
+                option.classList.add('selected');
+                selectedPersonalityOptions.push(option.innerText);
+              } else {
+                alert('You can only select up to 5 personality options.');
+              }
+            }
+          }
+
+          function toggleHobbiesSelection(option) {
+            // Implement similar logic for hobbies
+            if (selectedPersonalityOptions.includes(option.innerText)) {
+              option.classList.remove('selected');
+              selectedPersonalityOptions = selectedPersonalityOptions.filter(item => item !== option.innerText);
+            } else {
+              if (selectedPersonalityOptions.length < 5) {
+                option.classList.add('selected');
+                selectedPersonalityOptions.push(option.innerText);
+              } else {
+                alert('You can only select up to 5 personality options.');
+              }
+            }
+          }
+
+          function toggleSportsSelection(option) {
+            // Implement similar logic for sports
+            if (selectedPersonalityOptions.includes(option.innerText)) {
+              option.classList.remove('selected');
+              selectedPersonalityOptions = selectedPersonalityOptions.filter(item => item !== option.innerText);
+            } else {
+              if (selectedPersonalityOptions.length < 5) {
+                option.classList.add('selected');
+                selectedPersonalityOptions.push(option.innerText);
+              } else {
+                alert('You can only select up to 5 personality options.');
+              }
+            }
+          }
+
+          function myFunction() {
+            alert("Your responses have been submitted!")
+            window.location.href="feed.html";
+          }
+
+          function showAlert() {
+            alert("Your profile will be available soon!");
+          }
+        </script>
+        <div class="form-group">
+          <button type="button" onclick="myFunction()">Submit Survey</button>
+        </div>
+      </form>
+    </div>
+
+  </main>
+  <pre>
+
+
+
+
+
+</pre>
+
+
+
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-copyright">
+        &copy; Copyright 2024 DormConnect. All Rights Reserved.
+      </div>
+      <nav class="footer-links">
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+        </ul>
+      </nav>
+      <ul class="social-icons">
+        <li>
+          <a href="https://www.whatsapp.com/" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.twitter.com/" target="_blank">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/" target="_blank">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>
